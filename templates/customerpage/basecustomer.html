@@ -1,0 +1,18 @@
+{%extends "base.html"%}  
+{%block header%}
+{{block.super}}
+	<div id = "header">
+		<p style="text-align:right; color:white">Welcome, {{username}}</p>
+	</div>
+{%endblock header%}
+{%block menubar%}
+{{block.super}}
+	<div id="menubar" style="text-align:center;">
+		<ul>
+			<li><a class="home" href="/mkcomics/customer/home">Home</a></li>
+			<li><a class="library" href="/mkcomics/customer/library">Library</a></li>
+			<li><a class="mycomics" href="/mkcomics/customer/mycomics">My Comics</a></li>
+			<li><a class="logout" href="/mkcomics/customer/logout">Logout</a></li>
+		</ul>
+	</div>
+{%endblock menubar%}

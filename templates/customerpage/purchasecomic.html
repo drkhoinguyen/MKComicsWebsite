@@ -1,0 +1,30 @@
+{%extends "customerpage/basecustomer.html"%}
+{%block style%}
+{{block.super}}
+	<style type="text/css">
+		#content{
+			min-height:50%;
+			position:relative;
+			margin-bottom: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			width: 500px;
+		}
+		
+		#menubar ul li a.library{background-color:#29AFE8}				
+	</style>
+{%endblock style%}
+{%block content%}
+{{block.super}}
+	<div id = "content">
+		<a>Are you sure want to buy this comic completely. It will take $100 from your bank account.</a>
+		<form name = "input" action = "/mkcomics/customer/purchasecomic" method="get">
+			<input type="radio" name="ask" value="no" /> No, I change my opinion<br/>
+			<input type="radio" name="ask" value="wait" /> Yes. But wait for me to shopping another<br/>
+			<input type="radio" name="ask" value="yes" /> Yes. Complete my shopping here. Please send me a bill via my email<br/>
+			Your comic id: <input type="text" name="comicid" value = "{{comicid}}" />
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+{%endblock content%}

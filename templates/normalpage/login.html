@@ -1,0 +1,38 @@
+{%extends "normalpage/basenormal.html"%}
+{%block style%}
+{{block.super}}
+	<style type="text/css">
+		#content{
+			min-height:50%;
+			position:relative;
+			margin-bottom: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			width: 240px;
+		}
+		#content p input{
+			float:right
+		}
+		#menubar ul li a.login{background-color:#29AFE8}		
+		
+	</style>
+{%endblock style%}
+{%block content%}
+{{block.super}}
+<div id="content">
+	<p style="margin-left:20;color:red">{{errornotice}}</p>
+	<h3 >Login your account:</h3>
+	<form action="" method="post">{% csrf_token %}
+		<p>
+			<label for="id_Username">Username:</label>
+			<input id="username" type = "text" maxlength="30" name = "username">
+		</p>
+		<p>
+			<label for="id_Password">Password:</label>
+			<input id="password" type = "password" maxlength="30" name = "password">
+		</p>
+	<input type="submit" style="float:right"  value="Submit"/>
+	</form>
+</div>
+{%endblock content%}

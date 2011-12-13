@@ -1,0 +1,113 @@
+{%extends "normalpage/basenormal.html"%}
+{%block style%}
+{{block.super}}
+	<style type="text/css">
+		#content ul, #content1 ul {
+			list-style-type: none;
+		}		
+		
+		#sidebar{
+			float:left;
+			width:20%
+		}
+		#content{
+			float:left;
+			margin-left:20px;
+			width:40%;
+		}
+
+		
+		#content1{
+			float:left;
+			margin-left:20px;
+			width:35%;
+		}
+		
+		#sidebar ul li a{
+			display:block
+		}
+		
+		#menubar ul li a.library{background-color:#29AFE8}		
+		{%ifequal display 1%}
+			#sidebar ul li a.newcomic{background-color: #29AFE8}
+		{%endifequal%}
+		{%ifequal display 2%}
+			#sidebar ul li a.newissue{background-color: #29AFE8}
+		{%endifequal%}
+		{%ifequal display 3%}
+			#sidebar ul li a.action{background-color: #29AFE8}
+		{%endifequal%}
+		{%ifequal display 4%}
+			#sidebar ul li a.humor{background-color: #29AFE8}
+		{%endifequal%}
+		{%ifequal display 5%}
+			#sidebar ul li a.romantic{background-color: #29AFE8}
+		{%endifequal%}
+	</style>
+{%endblock style%}
+{%block sidebar%}
+{{block.super}}
+	<div id="sidebar" style="text-align:center">
+		<ul>
+			<li><a class="newarrival">News!</a></li>
+			<li><a style="margin-left:20"class="newcomic" href="/mkcomics/normal/library/newcomic">New Comic</a></li>
+			<li><a style="margin-left:20"class="newissue" href="/mkcomics/normal/library/newissue">New Issue</a></li>
+			<li><a class="category">Category</a></li>
+			<li><a style="margin-left:20"class="action" href="/mkcomics/normal/library/action">Action</a></li>			
+			<li><a style="margin-left:20"class="humor" href="/mkcomics/normal/library/humor">Humor</a></li>		
+			<li><a style="margin-left:20"class="romantic" href="/mkcomics/normal/library/romantic">Romantic</a></li>		
+		</ul>
+	</div>
+{%endblock sidebar%}
+
+
+
+{%block content%}
+{{block.super}}
+	<div id="content">
+	{%if comics%}
+		<h4>Our Comics:</h4>
+	{%endif%}
+		<ul>
+		{%for comic in comics%}	
+			<li>				
+				<form action="" method="post">{% csrf_token %}
+					<img id = "image" src="{{comic.image.url}}" width = 50 height=70/>
+					<a>{{comic.title}}</a>
+					<a>-</a>
+					<a>{{comic.author}}</a>
+					<a>-</a>
+					<a>{{comic.publisher}}</a>
+					<input type="hidden" name="comic" value={{comic.id}} />				
+					<input type="submit" value="Explore"/>
+				</form>
+			</li>
+		{%endfor%}
+		</ul>
+	</div>
+{%endblock content%}
+
+
+{%block content1%}
+{{block.super}}
+	<div id = "content1">
+	{%if issues%}
+		{%if comics%}
+		<h4>And their issues:</h4>
+		{%else%}
+		<h4>Our Issues:</h4>
+		{%endif%}
+	{%endif%}
+		<ul>
+		{%for issue in issues%}		
+			<li><img id = "image" src="{{issue.image.url}}" width = 50 height=70/>
+			<a>{{issue.episode}}</a>
+			<a>-</a>
+			<a>{{issue.title}}</a>
+			<a>-</a>
+			<a>{{issue.ISBN}}</a>
+			</li>		
+		{%endfor%}
+		</ul>
+	</div>
+{%endblock content1%}

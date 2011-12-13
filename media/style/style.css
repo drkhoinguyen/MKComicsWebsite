@@ -1,0 +1,136 @@
+@charset "utf-8";
+		#header {
+			background:#0063A6;
+			padding:10px;
+			text-align:center;
+		}	
+		
+		#menubar ul
+		{
+			margin-top: 5;
+			padding: 0;
+			list-style-type: none;
+			text-align: center;
+		}
+		
+		#menubar ul li { display: inline; }
+		
+		#menubar ul li a
+		{
+			text-decoration: none;
+			padding: .2em 1em;
+			color: #fff;
+			background-color: #0090D2;
+		}
+		
+		#menubar ul li a:hover
+		{
+			color: #fff;
+			background-color: #369;
+		}
+		
+		
+		#sidebar ul
+		{
+			margin-left: 2;
+			padding: 0;
+			list-style-type: none;
+			text-align:left;
+			background-color:  #0090D0;
+			width:130px;
+		}
+		#sidebar ul li a
+		{
+			text-decoration: none;
+			padding: .2em 1em;
+			color: #fff;
+			min-width:100px;
+			width: 100px;			
+		}
+		
+		#sidebar ul li a:hover
+		{
+			color: #fff;
+			background-color: #369;
+		}
+		
+		#global_content {
+			float: left;
+			margin-bottom: 80px; width: 100%;
+		}
+		#footer {
+			text-align:left;
+			color:#000;
+			position:relative;
+			bottom: 0;
+			width: 100%;
+			background-color: #0063A6;
+			margin-left:auto;
+			margin-right:auto;
+			margin-bottom:auto;
+			margin-top:30px;
+			color:#F0F0F0;
+			clear: both;
+		}
+
+		html, body {
+			height: 100%;
+			padding: 0;
+			margin: 0;
+		}
+		
+		#copyright{
+			width:660px;
+			margin-bottom: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			border-top-style: solid;
+			border-top-width: 1px;
+			border-top-color: #333333;
+		}
+		
+		#footer_sitename{
+			
+			background-attachment: scroll;
+			background-clip: border-box;
+			background-color: #0090D2;
+			background-image: none;
+			background-origin: padding-box;
+			background-position: 0 0;
+			background-repeat: repeat;
+			background-size: auto auto;
+			border-bottom-left-radius: 16px;
+			border-bottom-right-radius: 16px;
+			border-bottom-width: 1px;
+			border-left-width-rtl-source: physical;
+			border-right-width-ltr-source: physical;
+			border-right-width-value: 1px;
+			border-top-left-radius: 16px;
+			border-top-right-radius: 16px;
+			border-top-width: 1px;
+			box-shadow: 0 0 1px #333333;
+			color: white;
+			font-family: 'Varela Round',sans-serif;
+			font-size: 20px;
+			font-weight: normal;
+			margin-bottom: 0;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 0;
+			padding-bottom: 5px;
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-top: 5px;
+			position: relative;
+			text-align: center;
+			top: -15px;
+			width: 300px;
+		}
+		
+		#contact  .contact_header{
+		    color: white;
+			font-weight: normal;
+			font-family: 'Verdana Round', sans-serif			
+		}
+		

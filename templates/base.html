@@ -1,0 +1,57 @@
+﻿<html lang="en">
+<header>
+	{%block style%}
+		<link rel="stylesheet" href="{{MEDIA_URL}}style/style.css" type="text/css"/>
+	{%endblock style%}
+	{%block title%}
+		<title>MK Comics Reading Website</title>
+	{%endblock title%}
+</header>
+<body>
+	{%block header%}
+		<div id="header">
+			<div id = "iconpage">
+				<img src="{{MEDIA_URL}}image/iconpage.jpg" width = "275" height="183"/>
+			</div>
+			<div id = "welcome">
+				<h1 style = "color: #F0F0F0;">Welcome to MK Comics Reading</h1>
+				<h2 style = "color: #31B2E9;">Duc Minh Khoi Reading Comics Online</h2>
+			</div>
+		</div>
+	{%endblock header%}		
+	
+	{%block menubar%}
+
+	{%endblock menubar%}
+	<div id='global_content'>
+	{%block sidebar%}	
+	
+	{%endblock sidebar%}
+	{%block content%}
+		
+	{%endblock content%}	
+	{%block content1%}
+		
+	{%endblock content1%}	
+	</div>
+	{%block footer%}
+		<div id="footer">
+			<div id="footer_sitename" style="text-align:center">mkcomics.com</div>
+			<div id="admin_login" style="text-align:center">
+				<h3><a href="/admin" style="text-decoration:none;color: #31B2E9" >Admin login</a></h3>
+			</div>			
+			<div id = "contact" style="text-align:center">
+				<h1 class="contact_header">Contact</h1>
+				<div class="contact_content">
+					<p>If you want to keep intouch with me, feel free to contact with me via:</p>
+					<p>Email: <a style="color: #31B2E9">nguyenducminhkhoi@gmail.com</a></p>
+					<p>Tel: <a style="color: #31B2E9">01258352072</a></p>
+				</div>
+			</div>
+			<div id="copyright" style="text-align:center">
+				<p style = "color:#000; font-style:italic;">Copyright (C) 2011 mkcomics.com. All right reserved.</p>
+			</div>
+		</div>
+	{%endblock footer%}
+</body>
+</html>

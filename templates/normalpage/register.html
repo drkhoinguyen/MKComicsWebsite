@@ -1,0 +1,47 @@
+{%extends "normalpage/basenormal.html"%}   
+{%block style%}
+{{block.super}}
+	<style type="text/css">
+		#content{
+			min-height:50%;
+			position:relative;
+			margin-bottom: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			text-align: left;
+			width: 280px;
+		}
+		#content p input{
+			float:right
+		}
+		#menubar ul li a.register{background-color:#29AFE8}		
+	</style>
+{%endblock style%}
+{%block content%}
+{{block.super}}
+<div id="content">
+	<p style="margin-left:20;color:red">{{errornotice}}</p>
+	<h3 >Sign Up new User:</h3>
+	<form action="" method="post">{% csrf_token %}
+		<p>
+			<label for="id_Username">Username:</label>
+			<input id="username" type = "text" maxlength="30" name = "username">
+		</p>
+		<p>
+			<label for="id_Password">Password:</label>
+			<input id="password" type = "password" maxlength="30" name = "password">
+		</p>
+		<p>
+			<label for="id_ConfirmPassword">Confirm Password:</label>
+			<input id="confirmpassword" type = "password" maxlength="30" name = "confirmpassword">
+		</p>
+		<p>
+			<label for="id_Email">Email:</label>
+			<input id="email" type = "text" maxlength="30" name = "email">	
+		</p>
+		{{form.as_p}}
+		<input type="submit" value="Submit"/>		
+	</form>	
+</div>
+{%endblock content%}

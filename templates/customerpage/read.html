@@ -1,0 +1,50 @@
+{%extends "customerpage/basecustomer.html"%}
+{%block style%}
+{{block.super}}
+	<style type="text/css">
+		#content{
+			position:relative;
+			margin-bottom: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			width: 900px;
+		}
+		
+		#content1{
+			min-height:50%;
+			position:relative;
+			margin-bottom: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			width: {{width}}
+		}
+		
+		#menubar ul li a.mycomics{background-color:#29AFE8}				
+	</style>
+{%endblock style%}
+{%block content%}
+{{block.super}}
+	<div id="content">
+		<h3 style="text-align:center">Reading Comic Page</h3>
+		<form name = "input" action = "/mkcomics/customer/read" method="get">
+			Your issue id: <input type="text" name="issueid" value = "{{issueid}}" size = "5" />
+			Your current page: <input type="text" name="page" value = "{{page}}" size = "5" />
+			Of issue total page: <input type="text" name="totalpage" value = "{{totalpage}}" size = "5" />
+			Your current width: <input type="text" name="width" value = "{{width}}" size = "5"/>
+			Your current height: <input type="text" name="height" value = "{{height}}" size = "5" /><br/>
+			<input style="margin-left:300; margin-top:10"type="submit" value="Back" name = "back"/>
+			<input type="submit" value="Forward" name = "forward"/>
+			<input type="submit" value="Zoom In" name = "zoomin"/>
+			<input type="submit" value="Zoom Out" name = "zoomout"/>
+		</form>
+	</div>		
+{%endblock content%}
+
+{%block content1%}
+{{block.super}}
+	<div id = "content1">
+		<img src="{{pageimage}}" width ="{{width}}" height = "{{height}}">
+	</div>	
+{%endblock content1%}

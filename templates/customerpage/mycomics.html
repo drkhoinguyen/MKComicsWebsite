@@ -1,0 +1,76 @@
+{%extends "customerpage/basecustomer.html"%}
+{%block style%}
+{{block.super}}
+	<style type="text/css">
+		#content ul, #content1 ul {
+			list-style-type: none;
+		}		
+		
+		#sidebar{
+			float:left;
+			width:20%
+		}
+		#content{
+			float:left;
+			margin-left:20px;
+			width:40%;
+		}
+		
+		#content1{
+			float:left;
+			margin-left:20px;
+			width:40%;
+		}
+		
+		#menubar ul li a.mycomics{background-color:#29AFE8}		
+	</style>
+{%endblock style%}
+{%block content%}
+{{block.super}}
+	<div id="content">
+	{%if comics%}
+	<h4>Your current Comics:</h4>
+	{%endif%}
+	<ul>
+	{%for comic in comics%}	
+		<li>				
+			<form action="" method="post">{% csrf_token %}
+				<img id = "image" src="{{comic.image.url}}" width = 50 height=70/>
+				<a>{{comic.title}}</a>
+				<a>-</a>
+				<a>{{comic.author}}</a>
+				<a>-</a>
+				<a>{{comic.publisher}}</a>
+				<input type="hidden" name="comic" value={{comic.id}} />				
+				<input type="submit" value="Explore" name="explore"/>
+			</form>			
+		</li>
+	{%endfor%}
+	</ul>
+	</div>
+{%endblock content%}
+
+{%block content1%}
+{{block.super}}
+	<div id = "content1">
+	{%if issues%}
+	<h4>And their Issues:</h4>
+	{%endif%}
+		<ul>
+		{%for issue in issues%}	
+			<li>
+				<form action="" method="post">{% csrf_token %}
+					<img id = "image" src="{{issue.image.url}}" width = 50 height=70/>
+					<a>{{issue.episode}}</a>
+					<a>-</a>
+					<a>{{issue.title}}</a>
+					<a>-</a>
+					<a>{{issue.ISBN}}</a>
+					<input type="hidden" name="issue" value={{issue.id}} />	
+					<input type="submit" value="Read" name="read"/>
+				</form>	
+			</li>				
+		{%endfor%}
+		</ul>
+	</div>
+{%endblock content1%}
